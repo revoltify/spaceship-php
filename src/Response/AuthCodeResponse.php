@@ -15,13 +15,13 @@ class AuthCodeResponse extends BaseResponse
         return false;
     }
 
-    public function authCode(): string
+    public function authCode()
     {
         return $this->get('authCode');
     }
 
     public function expireDate()
     {
-        return $this->get('expires') ?? null;
+        return $this->get('expires');
     }
 }

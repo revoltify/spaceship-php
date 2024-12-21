@@ -20,12 +20,12 @@ class DomainResponse extends BaseResponse
         return false;
     }
 
-    public function name(): string
+    public function name()
     {
         return $this->get('name');
     }
 
-    public function unicodeName(): string
+    public function unicodeName()
     {
         return $this->get('unicodeName');
     }
@@ -40,7 +40,7 @@ class DomainResponse extends BaseResponse
         return $this->get('autoRenew');
     }
 
-    public function registrationDate(): string
+    public function registrationDate()
     {
         return $this->get('registrationDate');
     }
@@ -50,7 +50,7 @@ class DomainResponse extends BaseResponse
         return new \DateTime($this->registrationDate());
     }
 
-    public function expirationDate(): string
+    public function expirationDate()
     {
         return $this->get('expirationDate');
     }
@@ -60,19 +60,19 @@ class DomainResponse extends BaseResponse
         return new \DateTime($this->expirationDate());
     }
 
-    public function lifecycleStatus(): string
+    public function lifecycleStatus()
     {
         return $this->get('lifecycleStatus');
     }
 
-    public function verificationStatus(): string
+    public function verificationStatus()
     {
         return $this->get('verificationStatus');
     }
 
     public function eppStatuses(): array
     {
-        return $this->get('eppStatuses');
+        return $this->get('eppStatuses') ?? [];
     }
 
     public function hasEppStatus(string $status): bool
@@ -92,7 +92,7 @@ class DomainResponse extends BaseResponse
 
     public function suspensions(): array
     {
-        return $this->get('suspensions');
+        return $this->get('suspensions') ?? [];
     }
 
     public function isSuspended(): bool
@@ -100,14 +100,14 @@ class DomainResponse extends BaseResponse
         return !empty($this->suspensions());
     }
 
-    public function privacyProtectionLevel(): string
+    public function privacyProtectionLevel()
     {
-        return $this->get('privacyProtection')['level'] ?? '';
+        return $this->get('privacyProtection')['level'] ?? null;
     }
 
     public function hasContactForm(): bool
     {
-        return $this->get('privacyProtection')['contactForm'] ?? false;
+        return !empty($this->get('privacyProtection')['contactForm']);
     }
 
     public function hasHighPrivacy(): bool
@@ -120,9 +120,9 @@ class DomainResponse extends BaseResponse
         return $this->privacyProtectionLevel() === PrivacyLevel::HIGH;
     }
 
-    public function nameserverProvider(): string
+    public function nameserverProvider()
     {
-        return $this->get('nameservers')['provider'] ?? '';
+        return $this->get('nameservers')['provider'] ?? null;
     }
 
     public function nameserverHosts(): array
@@ -142,7 +142,7 @@ class DomainResponse extends BaseResponse
 
     public function contacts(): array
     {
-        return $this->get('contacts');
+        return $this->get('contacts') ?? [];
     }
 
     public function getContact(string $type)
@@ -150,22 +150,22 @@ class DomainResponse extends BaseResponse
         return $this->get('contacts')[$type] ?? null;
     }
 
-    public function getRegistrantId(): string
+    public function getRegistrantId()
     {
         return $this->getContact('registrant');
     }
 
-    public function getAdminContactId(): string
+    public function getAdminContactId()
     {
         return $this->getContact('admin');
     }
 
-    public function getTechContactId(): string
+    public function getTechContactId()
     {
         return $this->getContact('tech');
     }
 
-    public function getBillingContactId(): string
+    public function getBillingContactId()
     {
         return $this->getContact('billing');
     }
