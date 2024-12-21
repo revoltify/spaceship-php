@@ -15,7 +15,7 @@ class CreateContactResponse extends BaseResponse
         return false;
     }
 
-    public function contactId(): string
+    public function contactId()
     {
         return $this->get('contactId');
     }

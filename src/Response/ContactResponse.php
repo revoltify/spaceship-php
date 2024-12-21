@@ -15,77 +15,77 @@ class ContactResponse extends BaseResponse
         return false;
     }
 
-    public function firstName(): string
+    public function firstName()
     {
         return $this->get('firstName');
     }
 
-    public function lastName(): string
+    public function lastName()
     {
         return $this->get('lastName');
     }
 
-    public function organization(): string
+    public function organization()
     {
         return $this->get('organization');
     }
 
-    public function email(): string
+    public function email()
     {
         return $this->get('email');
     }
 
-    public function address1(): string
+    public function address1()
     {
         return $this->get('address1');
     }
 
-    public function address2(): string
+    public function address2()
     {
         return $this->get('address2');
     }
 
-    public function city(): string
+    public function city()
     {
         return $this->get('city');
     }
 
-    public function state(): string
+    public function state()
     {
         return $this->get('stateProvince');
     }
 
-    public function countryCode(): string
+    public function countryCode()
     {
         return $this->get('country');
     }
 
-    public function postalCode(): string
+    public function postalCode()
     {
         return $this->get('postalCode');
     }
 
-    public function phone(): string
+    public function phone()
     {
         return $this->get('phone');
     }
 
-    public function phoneExt(): string
+    public function phoneExt()
     {
         return $this->get('phoneExt');
     }
 
-    public function fax(): string
+    public function fax()
     {
         return $this->get('fax');
     }
 
-    public function faxExt(): string
+    public function faxExt()
     {
         return $this->get('faxExt');
     }
 
-    public function taxNumber(): string
+    public function taxNumber()
     {
         return $this->get('taxNumber');
     }

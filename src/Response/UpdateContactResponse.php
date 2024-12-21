@@ -15,8 +15,8 @@ class UpdateContactResponse extends BaseResponse
         return false;
     }
 
-    public function verificationStatus(): string
+    public function verificationStatus()
     {
-        return $this->get('verificationStatus') ?? '';
+        return $this->get('verificationStatus') ?? null;
     }
 }

@@ -17,14 +17,14 @@ class NameserverResponse extends BaseResponse
         return false;
     }
 
-    public function nameserverProvider(): string
+    public function nameserverProvider()
     {
         return $this->get('provider');
     }
 
     public function nameserverHosts(): array
     {
-        return $this->get('hosts');
+        return $this->get('hosts') ?? [];
     }
 
     public function hasCustomNameservers(): bool

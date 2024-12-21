@@ -29,7 +29,7 @@ abstract class BaseResponse
     /**
      * Get a specific parameter value
      */
-    protected function get(string $key, ?string $default = null)
+    protected function get(string $key, string $default = null)
     {
         return $this->response[$key] ?? $default;
     }
