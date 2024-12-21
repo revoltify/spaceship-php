@@ -1,0 +1,24 @@
+{
+    "name": "revoltify/spaceship-php",
+    "description": "Spaceship PHP Library",
+    "type": "library",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rtraselbd",
+            "email": "rtraselbd@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spaceship\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
